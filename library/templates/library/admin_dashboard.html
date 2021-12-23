@@ -1,0 +1,41 @@
+{% extends 'library/base.html'%}
+{% block form_block2 %}
+<title>Admin Dashboard</title>
+{%endblock%}
+{% block form_block%}
+{%if user.is_authenticated%}
+<nav class="navbar navbar-expand-lg navbar-light bg-success">
+    <div class="container-fluid">
+      <a class="navbar-brand text-light" href="{% url 'library:home'%}">Home</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active text-light" aria-current="page" href="{% url 'library:issue_book'%}">Issue Book</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{% url 'library:student_info'%}">Student Info</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{% url 'library:admin_info'%}">Add Book</a>
+          </li>
+          
+          
+          <li class="nav-item">
+            <a class="nav-link text-light" href="{% url 'library:admin_logout'%}">Logout</a>
+          </li>
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  
+<h1 class='text-center text-secondary'>Welcome Admin!</h1>
+{% else %}
+<h2>your are intruder</h2>
+{%endif%}
+{%endblock%}

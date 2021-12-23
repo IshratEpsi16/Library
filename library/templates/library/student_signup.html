@@ -1,0 +1,21 @@
+{% extends 'library/base.html'%}
+{% block form_block2 %}
+<title>Student Signup Form</title>
+{%endblock%}
+{% block form_block%}
+
+<h1 class='text-center text-success'>Student Signup</h1>
+{% if registerd%}
+<h3>Rgistretion done!</h3>
+{%else%}
+<form method='POST' class="form-control" >
+       
+{{student_form_obj.as_p}} 
+{{user_obj.as_p}}
+{% csrf_token %}
+<input type='submit' value="Submit" class="btn btn-success">
+
+</form>
+
+{%endif%}
+{% endblock%}

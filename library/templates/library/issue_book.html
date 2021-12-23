@@ -1,0 +1,51 @@
+{% extends 'library/base.html'%}
+{% block form_block2 %}
+<title>Issue Book</title>
+{%endblock%}
+{% block form_block%}
+<h3>Issue book for students</h3>
+<form method='POST' class="form-control" >
+       
+  
+    {{issue_obj2.as_p}}
+    {% csrf_token %}
+    <input type='submit' value="Submit" class="btn btn-success">
+    
+</form>
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Book Name</th>
+        <th scope="col">Issued date</th>
+        <th scope="col">Return date</th>
+        <th scope="col">Email</th>
+        <th scope="col">Fine</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+     
+        {% for i in issue_obj%}
+      
+     
+      <tr>
+        
+        <td>{{i.first_name}}</td>
+        <td>{{i.last_name}}</td>
+        <td>{{i.book_name}}</td>
+        <td>{{i.issued_date}}</td>
+        <td>{{i.return_date}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.fine}}</td>
+        <td><button type="submit" class="btn btn-secondary"><a href='{% url "library:edit" id=i.id %}'>Edit</a></button></td>
+        <td><button type="submit" class="btn btn-secondary"><a href='{% url "library:delete" id=i.id %}'>Delete</a></button></td>
+      </tr>
+      {%endfor%}
+      
+    </tbody>
+  </table>
+{%endblock%}

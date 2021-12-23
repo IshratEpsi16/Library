@@ -1,0 +1,5 @@
+<form method="POST">
+    {{new_obj.as_p}}
+    {% csrf_token%}
+    <button type="submit" class="btn btn-secondary">Update</button>
+</form>

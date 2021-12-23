@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welocome to Library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel='stylesheet' href='{% static "css/style.css" %}'>
+</head>
+
+<body>
+<div class='container'>
+    <nav class="navbar navbar-light bg-light ">
+        <div class="container-fluid">
+          <div class="row align-items-start">
+            <div class="col">
+              <img src="{%static 'images/download.jpg'%}" alt="" width="90" height=auto class="d-inline-block align-text-top"> 
+            </div>
+          </div>
+
+          <div class="row align-items-center">
+            <div class="col">
+              <h1 class="h1 ">Welcome to BIST Library</h1>
+            </div>
+          </div>
+          <div class="row align-items-end">
+            <div class="col">
+            </div>
+          </div>
+        </div>
+    </nav>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/1.png'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/2.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/3.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <br>
+    <div class="card border">
+      <div class="card-body">
+        <p class='fw-normal fs-5 text-secondary'> Welcome to the Bangladesh Institute of Science & Technology(BIST)
+       Library. The Library's website is our gateway to our resources and services. The library website aims to
+        provide a brief introduction to the facilities and services provided by the library, library operating 
+        hours and other basic information pertaining to the library. The primary objective of library is to 
+        implement, enrich, and support the educational programs of East West University.
+
+      The Library is the backbone of the research and development activities of BIST. 
+      The use of library resources is vital for pursuing study and research. It is an integral part of
+       the Institute and designed to meet the information, research, and curriculum needs of its students, 
+       faculty and staff members. It has comprehensive collections to meet the needs of its users.
+        The library's holdings include a diverse collection of print, non-print, and computer resources 
+        for all to use.
+        </p>
+      </div>
+      <br>
+    
+      <div class="row">
+        <div class="col">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/2zfhvDhnA5U" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        
+        <div class="col">
+          <h3 class="text-dark">Do We Still Need Libraries?</h3>
+          <p class='fw-normal fs-6 text-secondary'>It can be reasonably assumed that you can find everything online, so do we still need libraries?
+
+            The simple answer is yes, libraries are still needed, but it is not only for their books.
+            
+            Libraries offer free, educational resources and books for everyone who can’t buy them for themselves. It doesn’t matter how much money you make because every resource is free, including books, internet access, and computers. Everything in a library is free and you can ask the librarian anything and they will help you out. They can answer questions about resume writing, job applications, government forms, and more all for free.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container card">
+    <div class="row">
+      <div class="col"></div>
+      <div class="col p-5 mt-2">
+        <img src="{% static 'images/263-2636557_icon-admin-cartoon.png'%}" class="rounded" alt="admin icon" width="170" height=auto>
+        <button type="button" class="m-4 btn btn-primary "><a href="{% url 'library:admin_login'%}" class='text-white' style="text-decoration: none; ">Admin Login</a></button>
+      </div>
+      <div class="col"></div>
+      
+      <div class="col p-5 mt-2">
+        <img src="{% static 'images/student_icon-512.png'%}" class="rounded" alt="student icon" width="160" height=auto><br>
+        <button type="button" class="m-3 btn btn-primary "><a href="{% url 'library:student_login'%}" class='text-white' style="text-decoration:none; btn btn-primary">Student Login</a></button>
+                <p>You're not a member yet?</p><a href="{% url 'library:student_signup'%}">Sign Up now</a>
+      </div>
+      <div class="col"></div>
+    </div>
+  </div>
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+       
+</div>
+
+<div class="container card">
+  <div class="card-body">
+    <div class="p-3 mb-2 bg-secondary text-white">
+      The word library is derived from a French word "Librairie"; Latin "liber" = book. The library plays an important role in our academic and social lives. Library is an organized collection of information resources made accessible to a defined community for reference or borrowing and this collection of information may be in the form of books, newspapers, CD’s, journals and research papers etc. library provides us physical or digital access to material, and may be a physical building or room, or a virtual space, or both containing collection of informative material. A library can be of different types like, school library, college library, office library or community library etc. and collection in a library may vary from books, periodicals, newspapers, manuscripts, films, maps, prints, documents, microform, CDs, cassettes, videotapes, DVDs, Blue-ray Discs, e-books, audio books, databases, and other formats. Libraries range in size from a few shelves of books to several million items.
+    </div>
+  </div>
+</div>
+<div class=" container bg-light text-dark text-center">
+  <p class="fs-6">&copy Copyright Library Management | All Rights Reserved</p>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>

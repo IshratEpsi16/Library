@@ -1,0 +1,32 @@
+{% extends 'library/base.html'%}
+{% block form_block2 %}
+<title>Student Information</title>
+{%endblock%}
+{% block form_block%}
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">First Name</th>
+        <th scope="col">Last Name</th>
+        <th scope="col">Department</th>
+        <th scope="col">Roll</th>
+        <th scope="col">Email</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in info_show%}
+      <tr>
+        
+        <td>{{i.first_name}}</td>
+        <td>{{i.last_name}}</td>
+        <td>{{i.department}}</td>
+        <td>{{i.roll}}</td>
+        <td>{{i.email}}</td>
+        
+      </tr>
+      {%endfor%}
+      
+    </tbody>
+  </table>
+{%endblock%}

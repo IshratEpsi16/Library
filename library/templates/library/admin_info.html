@@ -1,0 +1,50 @@
+{% extends 'library/base.html'%}
+{% block form_block2 %}
+<title>Admin Info</title>
+{%endblock%}
+
+{% block form_block%}
+
+<h1 class='text-center text-success'>Admin Pannel</h1>
+<div class="d-grid gap-2">
+    <button class="btn btn-success" type="button"><h2>Add Books</h2></button>
+    
+  </div>
+
+<form method='POST' class="form-control" >
+       
+
+{{key.as_p}}
+{% csrf_token %}
+<input type='submit' value="Submit" class="btn btn-success">
+
+</form>
+<br>
+<table class="table table-success table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Book</th>
+        <th scope="col">Author</th>
+        <th scope="col">Category</th>
+        <th scope="col">ISBN</th>
+        <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for i in info_show%}
+      <tr>
+        
+        <td>{{i.book_name}}</td>
+        <td>{{i.author_name}}</td>
+        <td>{{i.category}}</td>
+        <td>{{i.isbn}}</td>
+        <td>{{i.quantity}}</td>
+      </tr>
+      {%endfor%}
+      
+    </tbody>
+  </table>
+
+
+  
+{% endblock%}
